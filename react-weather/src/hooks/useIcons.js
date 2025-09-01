@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
 
+/*
+ * Custom Hook to fetch the icon urls for specific weather data.
+ *
+ * @param the weather data as fetched by useWeatherData
+ * @return an object with the url for the current weather as String, an array of String urls for the 5-day forecast, a boolean for the loading state of the former and an array containing 'true' for each url fetched for the forecast.
+ */
 export default function useIcons({ weatherData, loadingW }) {
     const [current, setCurrent] = useState('/01d@2x.png');
     const [forecast, setForecast] = useState([]);
     const [currentLoaded, setCurrentLoaded] = useState(false);
-    //const [forecastLoaded, setForecastLoaded] = useState(false);
     const [forecastLoaded, setForecastLoaded] = useState([]);
 
     useEffect(() => {
@@ -59,11 +64,8 @@ export default function useIcons({ weatherData, loadingW }) {
             Promise.all(forecast).then((values) => {
                 iconURLs.push(values);
                 console.log(iconURLs);
-
-                //setForecastLoaded(true);
                 console.log(`forecast loaded: ${forecastLoaded}`);
             });
-            //console.log(iconURLs);
         }
     }, [loadingW]);
 

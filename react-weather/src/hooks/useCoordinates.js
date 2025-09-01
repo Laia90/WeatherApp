@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react'
 
+/*
+ * Custom Hook to fetch coordinates for a city from open-meteo.com.
+ *
+ * @return an object with latitude, longitude and the loading state of the coordinates
+ */
 export default function useCoordinates(cityName) {
     const [latitude, setLatitude] = useState(0);
     const [longitude, setLongitude] = useState(0);

@@ -1,13 +1,15 @@
 import ForecastDay from "./forecastDay";
 import { Fragment, useEffect, useState } from "react";
 
+/*
+ * Component showing the 5-day weather forecast according to DWD. 
+ *
+ * @param {object} props         
+ * @property weatherForecast - an object with the 5-day weather forecast data as fetched by useWeatherData
+ * @property urlPromises - an array of Strings for the urls of the weather condition images, once the respective api calls are resolved
+ * @property forecastLoaded - an array containing a boolean of 'true' for each image url that is fetched 
+ */
 export default function FiveDayForecast(props) {
-
-    /* useEffect(() => {
-        console.log(props.forecastLoaded);
-        console.log(props.urlPromises);
-    }, [props.forecastLoaded]); */
-
     return (props.weatherForecast && props.weatherForecast.time.length > 0 && (
         <Fragment key='forecast'>
             <div className='forecast'>
@@ -22,6 +24,5 @@ export default function FiveDayForecast(props) {
             </div>
         </Fragment>
     )
-
     );
 }

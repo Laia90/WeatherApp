@@ -6,14 +6,15 @@ import useCoordinates from './hooks/useCoordinates';
 import useWeatherData from './hooks/useWeatherData';
 import useIcons from './hooks/useIcons';
 
+/*
+ * An app to fetch the weather from open-meteo.com and show it on a webpage. 
+ * Currently hardcoded for the city of Hamburg, DE.
+ */
 function App() {
   const [city, setCity] = useState("Hamburg");
   const coordinates = useCoordinates(city);
   const weatherData = useWeatherData(coordinates);
   const { current, forecast, currentLoaded, forecastLoaded } = useIcons(weatherData);
-
-  /*  useEffect(() => { console.log(`icon ${forecastLoaded.length} loaded`) }, [forecastLoaded]);
-   console.log(forecast); */
 
   return (
     <div className='wrapper'>
