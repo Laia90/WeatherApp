@@ -22,3 +22,21 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+react-weather/src/assets/01d@2x.png:Zone.Identifier
+.vscode/settings.json
+DB/weatherIcons.db
+DB/weatherIcons.db
+react-weather/eslint.config.js
+react-weather/package-lock.json
+react-weather/package.json
+react-weather/README.md
+react-weather/public/vite.svg
+react-weather/public/Images/01d@2x.png
+react-weather/public/Images/02d@2x.png
+react-weather/public/Images/03d@2x.png
+react-weather/public/Images/09d@2x.png
+react-weather/public/Images/10d@2x.png
+.gitignore
+.gitignore
+.gitignore
+.gitignore
