@@ -4,7 +4,8 @@ export default function useIcons({ weatherData, loadingW }) {
     const [current, setCurrent] = useState('/01d@2x.png');
     const [forecast, setForecast] = useState([]);
     const [currentLoaded, setCurrentLoaded] = useState(false);
-    const [forecastLoaded, setForecastLoaded] = useState(0);
+    const [forecastLoaded, setForecastLoaded] = useState(false);
+    const [loadedIcons, setLoadedIcons] = useState([0]);
 
     useEffect(() => {
         const fetchIcon = async (wmoCode, array) => {
@@ -19,7 +20,8 @@ export default function useIcons({ weatherData, loadingW }) {
                     iconURL.then((value) => {
                         console.log("resolving promise");
                         array.push(value);
-                        setForecastLoaded(forecastLoaded + 1);
+                        setLoadedIcons([loadedIcons[0] + 1]);
+                        console.log(loadedIcons);
                     })
                 }
                 else {
@@ -57,8 +59,11 @@ export default function useIcons({ weatherData, loadingW }) {
             Promise.all(forecast).then((values) => {
                 iconURLs.push(values);
                 console.log(iconURLs);
+
+                setForecastLoaded(true);
+                console.log(`forecast loaded: ${forecastLoaded}`);
             });
-            console.log(iconURLs);
+            //console.log(iconURLs);
         }
     }, [loadingW]);
 
