@@ -12,7 +12,7 @@ export default function ForecastDay(props) {
                     })}
                 </p>
                 <p className='forecast-condition'>
-                    <WeatherIcon _key={`forecastImg${props.index}`} wmoCode={props.weatherForecast.weather_code[props.index]} url={props.url} />
+                    <WeatherIcon _key={`forecastImg${props.index}`} wmoCode={props.weatherForecast.weather_code[props.index]} url={props.url} iconLoaded={props.iconLoaded} />
                 </p>
                 <p className='forecast-temp'>{props.weatherForecast.temperature_2m_max[props.index]}&deg;C</p>
             </div>

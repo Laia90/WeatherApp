@@ -15,7 +15,7 @@ export default function FiveDayForecast(props) {
                 <div className='forecast-days' >
                     {props.forecastLoaded && props.weatherForecast.time.map((time, index) => (
                         <Fragment key={`forecast-day${index}`}>
-                            <ForecastDay index={index} weatherForecast={props.weatherForecast} url={props.urlPromises[index]} />
+                            <ForecastDay index={index} weatherForecast={props.weatherForecast} url={props.urlPromises[index]} iconLoaded={props.forecastLoaded[index]} />
                         </Fragment>
                     ))}
                 </div>
